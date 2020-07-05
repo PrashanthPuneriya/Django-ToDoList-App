@@ -1,0 +1,9 @@
+{% include 'base.html' %}
+{% block content %}
+    <h2>Index Page</h2>
+    {% if user.is_authenticated %}
+        <p>{{ user.username }} is logged in</p>
+    {% else %}
+        <p>You are NOT logged in</p>
+    {% endif %}
+{% endblock content %}

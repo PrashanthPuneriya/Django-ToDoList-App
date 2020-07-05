@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+
+<body>
+    <a href="{% url 'todolist:index' %}">Home</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'accounts:logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'accounts:register' %}">Register</a>
+        <a href="{% url 'accounts:login' %}">Login</a>
+    {% endif %}
+    
+    {% block content %}
+    {% endblock content %}
+</body>
+
+</html>

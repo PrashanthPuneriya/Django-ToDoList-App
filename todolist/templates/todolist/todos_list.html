@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>HOMEPAGE -- List of TODOS</h3>
+<hr>
+<a href="{% url 'todolist:todosCreate' %}">Add a TASK</a>
+<br>
+<a href="{% url 'todolist:todosSearch' %}">Search</a>
+<hr>
+<ul>
+    {% for todo in todos %}
+    <li><a href="{% url 'todolist:todosGet' todo.id %}">{{todo.name}}</a> -- Due on {{todo.due_date}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
